@@ -20,31 +20,31 @@ public class Bitmap : IBitmap
 
         for (int i = 0; i < height; i++)
         {
-            // Console.WriteLine($"Выделение памяти {i}");
+            Console.WriteLine($"Выделение памяти {i}");
             _map[i] = new Color[wight];
         }
     }
 
-    //public Bitmap(Bitmap bitmap)
-    //{
-    //    Width = bitmap.Width;
-    //    Height = bitmap.Height;
+    public Bitmap(Bitmap bitmap)
+    {
+        Width = bitmap.Width;
+        Height = bitmap.Height;
 
-    //    _map = new Color[Height][];
+        _map = new Color[Height][];
 
-    //    for (int i = 0; i < Height; i++)
-    //    {
-    //        _map[i] = new Color[Width];
-    //    }
+        for (int i = 0; i < Height; i++)
+        {
+            _map[i] = new Color[Width];
+        }
 
-    //    for (int x = 0; x < Width; x++)
-    //    {
-    //        for (int y = 0; y < Height; y++)
-    //        {
-    //            _map[x][y] = bitmap._map[x][y];
-    //        }
-    //    }
-    //}
+        for (int x = 0; x < Width; x++)
+        {
+            for (int y = 0; y < Height; y++)
+            {
+                _map[x][y] = bitmap._map[x][y];
+            }
+        }
+    }
 
     public int Width { get; private set; }
 
@@ -59,7 +59,10 @@ public class Bitmap : IBitmap
     {
         if (IsCorrectPixel(x, y))
         {
-            _map[x][y] = color;
+            Math.Atan((double) x / y);
+            // _map[x][y] = color;
+
+            // new Bitmap(this);
         }
     }
 

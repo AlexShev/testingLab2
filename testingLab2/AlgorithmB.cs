@@ -24,8 +24,6 @@ public class AlgorithmB
 
     public void FillCircle(IBitmap bitmap, Color color, Point center, int R)
     {
-        // AlgorithmExpector?.Start();
-
         int x = R, y = 0;
         int d = 3 - 2 * R;
 
@@ -54,8 +52,6 @@ public class AlgorithmB
 
             // Thread.Sleep(10);
         }
-
-        // AlgorithmExpector?.Stop();
     }
 
     void draw_pixels(IBitmap bitmap, Color color, int x1, int x2, int y)
